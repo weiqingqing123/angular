@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <!--<div class="runoob-directive"></div>-->
+    <!-- directive: runoob-directive -->
+</body>
+<script>
+    var app=angular.module("myApp",[]);
+    app.directive("runoobDirective",function(){
+        return{
+            restrict:"M",
+            replace:true,
+            template:"<h1>自定义指令</h1>"
+        }
+    });
+</script>
+</html>

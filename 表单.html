@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myText">
+        <form novalidate>
+            FirstName:<br>
+            <input type="text" ng-model="user.firstName"><br>
+            LastName:<br>
+            <input type="text" ng-model="user.lastName"><br>
+            <button ng-click="reset()">RESET</button>
+        </form>
+        <p>form={{user}}</p>
+        <p>master={{master}}</p>
+    </div>
+</body>
+<script>
+    var app=angular.module("myApp",[]);
+    app.controller("myText",function($scope){
+        $scope.master={firstName:"John",lastName:"Doe"};
+      $scope.reset=function(){
+            $scope.user=angular.copy($scope.master);
+      }
+      
+$scope.reset();
+    })
+</script>
+</html>
